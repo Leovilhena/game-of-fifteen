@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 // constants
 #define DIM_MIN 3
@@ -40,7 +41,7 @@ void draw(void);
 bool move(int tile);
 bool won(void);
 
-int main(int argc, string argv[])
+int main(int argc, const char* argv[])
 {
     // ensure proper usage
     if (argc != 2)
@@ -104,11 +105,19 @@ int main(int argc, string argv[])
 
         // prompt for move
         printf("Tile to move: ");
-        int tile = GetInt();
-        
+
+        // get user input
+        int tile;
+        scanf("%i", &tile);
+       
         // quit if user inputs 0 (for testing)
-        if (tile == 0)
+        if (tile == 0 || tile < 0)
         {
+            break;
+        }
+        else if (tile > d*d)
+        {
+            printf("WRONG MOVE!\n");
             break;
         }
 
