@@ -168,7 +168,6 @@ void greet(void)
  */
 void init(void)
 {
-    // TODO
     int count = (d*d)-1;
     
     for (int i = 0; i < d; i++)
