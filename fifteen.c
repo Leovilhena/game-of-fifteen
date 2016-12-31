@@ -107,6 +107,7 @@ int main(int argc, const char* argv[])
         printf("Tile to move: ");
 
         // get user input
+        // TODO fix input to better receive input and don't close the program
         int tile;
         scanf("%i", &tile);
        
